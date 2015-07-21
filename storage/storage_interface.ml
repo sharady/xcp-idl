@@ -172,6 +172,7 @@ exception Cancelled of string
 exception Redirect of string option
 exception Sr_attached of string
 exception Unimplemented of string
+exception Inapplicable of string
 exception Duplicated_key of string
 exception No_storage_plugin_for_sr of string
 exception Content_ids_do_not_match of (string * string)
