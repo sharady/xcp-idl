@@ -106,6 +106,7 @@ type port_config_t = {
 type bridge_config_t = {
 	ports: (port * port_config_t) list;
 	vlan: (bridge * int) option;
+	vlan_id: string option;
 	bridge_mac: string option;
 	other_config: (string * string) list;
 	persistent_b: bool;
@@ -134,6 +135,7 @@ let default_interface = {
 let default_bridge = {
 	ports = [];
 	vlan = None;
+	vlan_id = None;
 	bridge_mac = None;
 	other_config = [];
 	persistent_b = false;
