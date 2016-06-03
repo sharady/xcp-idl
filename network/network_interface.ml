@@ -106,7 +106,6 @@ type port_config_t = {
 type bridge_config_t = {
 	ports: (port * port_config_t) list;
 	vlan: (bridge * int) option;
-	vlan_id: string option;
 	bridge_mac: string option;
 	other_config: (string * string) list;
 	persistent_b: bool;
@@ -135,7 +134,6 @@ let default_interface = {
 let default_bridge = {
 	ports = [];
 	vlan = None;
-	vlan_id = None;
 	bridge_mac = None;
 	other_config = [];
 	persistent_b = false;
@@ -177,7 +175,6 @@ let update_config config name data =
 
 external reopen_logs: unit -> bool = ""
 external clear_state: unit -> unit = ""
-external reset_state: unit -> unit = ""
 
 external set_gateway_interface: debug_info -> name:iface -> unit = ""
 external set_dns_interface: debug_info -> name:iface -> unit = ""
